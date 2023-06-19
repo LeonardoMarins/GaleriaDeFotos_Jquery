@@ -7,7 +7,7 @@ $(document).ready(function () {
         $('form').slideUp();
     })
 
-    $('form').on('submit', function(e) { // functiona callback igual ao javascript umas function que passa como paramentro outra function
+    $('form').on('submit', function(e) { // functiona callback igual ao javascript  function que passa como paramentro outra function
         e.preventDefault();
         const enderecoDaNovaImagem = $("#endereco-imagem-nova").val(); // val == value
         const novoItem = $('<li style="display:none"></li>');
@@ -24,4 +24,5 @@ $(document).ready(function () {
         $(novoItem).fadeIn();
         $("endereco-imagem-nova").val('');
     })
+    
 })

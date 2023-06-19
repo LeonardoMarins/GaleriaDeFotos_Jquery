@@ -10,8 +10,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./main.css">
+    <style>
+        /* Defina uma altura para o elemento div que conterá o mapa */
+        #map {
+            height: 200px;
+            width: 300px;
+            
+        }
+    </style>
 </head>
-
 <body>
     <header>
         <h1>Galeria de fotos</h1>
@@ -32,10 +39,27 @@
             </div>
         </li>
     </ul>
+    <div id="map"></div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="./main.js"></script> <!--colocar o arquivo js depois do jquery -->
+    <script>
+        function initMap() {
+            // Crie um objeto LatLng com as coordenadas do local desejado
+            var myLatLng = { lat: -23.550520, lng: -46.633308 };
+
+            // Crie um objeto de opções do mapa
+            var mapOptions = {
+                center: myLatLng,
+                zoom: 8
+            };
+
+            // Crie o mapa passando o elemento div e as opções do mapa
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+            // Opcionalmente, você pode adicionar marcadores, polígonos, rotas, etc., ao mapa
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdsgtWhxru9uQr8DQMzSbC0gZIwNdywLI&callback=initMap"
+        async defer></script>
 </body>
-
 </html>
-
-<!-- com display flex o align itemns vira vertical e justify-content vira horizontal-->
